@@ -1,4 +1,4 @@
-import { Scissors, Sparkles, Palette, Hand, Footprints, Smile } from 'lucide-react';
+import { Scissors } from 'lucide-react';
 import SectionTitle from './SectionTitle';
 import LazyImage from './LazyImage';
 import { useBooking } from '../context/BookingContext';
@@ -7,51 +7,99 @@ import { useNavigate } from 'react-router-dom';
 const services = [
   {
     id: 1,
-    name: 'Hair Braiding',
-    description: 'Intricate braiding styles that showcase your unique personality',
-    price: 80,
+    name: 'Locks Installation',
+    description: 'Secure and stylish locks installation',
+    price: 4000,
     icon: Scissors,
-    image: 'https://images.pexels.com/photos/3065171/pexels-photo-3065171.jpeg?auto=compress&cs=tinysrgb&w=800',
+    image: '/src/assets/locks.jpg',
   },
   {
     id: 2,
-    name: 'Hair Styling',
-    description: 'Professional cuts, colors, and treatments for stunning looks',
-    price: 120,
-    icon: Sparkles,
-    image: 'https://images.pexels.com/photos/3992859/pexels-photo-3992859.jpeg?auto=compress&cs=tinysrgb&w=800',
+    name: 'Knotless Braids',
+    description: 'Knotless braids for a natural, lightweight finish',
+    price: 700,
+    icon: Scissors,
+    image: '/src/assets/knotless.jpg',
   },
   {
     id: 3,
-    name: 'Makeup Artistry',
-    description: 'Flawless makeup application for any occasion',
-    price: 100,
-    icon: Palette,
-    image: 'https://images.pexels.com/photos/457701/pexels-photo-457701.jpeg?auto=compress&cs=tinysrgb&w=800',
+    name: 'Normal Braids',
+    description: 'Classic braiding styles',
+    price: 600,
+    icon: Scissors,
+    image: '/src/assets/braids.jpg',
   },
   {
     id: 4,
-    name: 'Nail Art',
-    description: 'Creative and elegant nail designs that make a statement',
-    price: 60,
-    icon: Hand,
-    image: 'https://images.pexels.com/photos/1813272/pexels-photo-1813272.jpeg?auto=compress&cs=tinysrgb&w=800',
+    name: 'Cornrows',
+    description: 'Traditional cornrows for a neat look',
+    price: 400,
+    icon: Scissors,
+    image: '/src/assets/cornrows.jpg',
   },
   {
     id: 5,
-    name: 'Pedicure',
-    description: 'Relaxing foot care treatments for total rejuvenation',
-    price: 70,
-    icon: Footprints,
-    image: 'https://images.pexels.com/photos/3997379/pexels-photo-3997379.jpeg?auto=compress&cs=tinysrgb&w=800',
+    name: 'Half Cornrows / Fulani Braids',
+    description: 'Stylish half cornrows / Fulani braid styling',
+    price: 650,
+    icon: Scissors,
+    image: '/src/assets/fulani.jpg',
   },
   {
     id: 6,
-    name: 'Facial Treatment',
-    description: 'Luxurious skincare treatments for radiant, glowing skin',
-    price: 90,
-    icon: Smile,
-    image: 'https://images.pexels.com/photos/3997993/pexels-photo-3997993.jpeg?auto=compress&cs=tinysrgb&w=800',
+    name: 'Sister Locks',
+    description: 'Delicate sister locks maintenance and installation',
+    price: 2500,
+    icon: Scissors,
+    image: '/src/assets/sisterlocks.jpg',
+  },
+  {
+    id: 7,
+    name: 'Natural Twist',
+    description: 'Natural twist styling for a soft, elegant look',
+    price: 700,
+    icon: Scissors,
+    image: '/src/assets/naturaltwist.jpg',
+  },
+  {
+    id: 8,
+    name: 'Passion Twist',
+    description: 'Trendy passion twists for volume and texture',
+    price: 700,
+    icon: Scissors,
+    image: '/src/assets/passiontwist.jpg',
+  },
+  {
+    id: 9,
+    name: 'Twist Out',
+    description: 'Defined twist-out styling',
+    price: 350,
+    icon: Scissors,
+    image: '/src/assets/twistout.jpg',
+  },
+  {
+    id: 10,
+    name: 'Micro Twist',
+    description: 'Small, neat micro twists',
+    price: 1000,
+    icon: Scissors,
+    image: '/src/assets/microtwist.jpg',
+  },
+  {
+    id: 11,
+    name: 'Ear Piercing',
+    description: 'Safe and sterile ear piercing service',
+    price: 250,
+    icon: Scissors,
+    image: '/src/assets/earpiercing.jpg',
+  },
+  {
+    id: 12,
+    name: 'Stitches',
+    description: 'Precision stitching service',
+    price: 500,
+    icon: Scissors,
+    image: '/src/assets/stitches.jpg',
   },
 ];
 
@@ -64,9 +112,10 @@ const Services = () => {
     <section id="services" className="py-20 bg-gradient-to-b from-white to-pink-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionTitle
-          title="Our Services"
-          subtitle="Discover our range of premium beauty treatments designed to make you feel beautiful"
+          title="Our Hair Services"
+          subtitle="Professional hair care tailored to your unique style"
         />
+        <p className="mt-2 text-sm text-gray-600">Note: Each service requires a 50% deposit when booking.</p>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {services.map((service, index) => {

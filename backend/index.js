@@ -1,3 +1,4 @@
+require('dotenv').config();
 const express = require("express");
 const app = express();
 const payments = require("./routes/payment");
@@ -14,6 +15,7 @@ app.use("/api", payments);
 
 app.use(errorHandler);
 
-app.listen(5000, () => {
-  console.log("Backend is running!");
+const PORT = process.env.PORT || 5000;
+app.listen(PORT, () => {
+  console.log(`Backend is running on port ${PORT}`);
 });

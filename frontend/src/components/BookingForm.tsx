@@ -4,13 +4,26 @@ import toast from 'react-hot-toast';
 import SectionTitle from './SectionTitle';
 import { useBooking } from '../context/BookingContext';
 
-const services = [
-  { id: 1, name: 'Hair Braiding', price: 80 },
-  { id: 2, name: 'Hair Styling', price: 120 },
-  { id: 3, name: 'Makeup Artistry', price: 100 },
-  { id: 4, name: 'Nail Art', price: 60 },
-  { id: 5, name: 'Pedicure', price: 70 },
-  { id: 6, name: 'Facial Treatment', price: 90 },
+// services with grouped variants (braiding options grouped under 'Braiding')
+const services: Array<any> = [
+  { id: 1, name: 'Locks Installation', price: 4000 },
+  {
+    id: 2,
+    name: 'Braiding',
+    variants: [
+      { id: '2-1', name: 'Knotless Braids', price: 700 },
+      { id: '2-2', name: 'Normal Braids', price: 600 },
+      { id: '2-3', name: 'Cornrows', price: 400 },
+      { id: '2-4', name: 'Half Cornrows / Fulani Braids', price: 650 },
+    ],
+  },
+  { id: 3, name: 'Sister Locks', price: 2500 },
+  { id: 4, name: 'Natural Twist', price: 700 },
+  { id: 5, name: 'Passion Twist', price: 700 },
+  { id: 6, name: 'Twist Out', price: 350 },
+  { id: 7, name: 'Micro Twist', price: 1000 },
+  { id: 8, name: 'Ear Piercing', price: 250 },
+  { id: 9, name: 'Stitches', price: 500 },
 ];
 
 const BookingForm = () => {
@@ -34,9 +47,13 @@ const BookingForm = () => {
     setFormData((prev) => ({ ...prev, [name]: value }));
 
     if (name === 'service') {
-      const service = services.find((s) => s.name === value);
-      setSelectedPrice(service?.price || 0);
-      setBooking({ service: value, price: service?.price || 0 });
+      // value will be formatted as "DisplayName|price" for selected option
+      const parts = value.split('|');
+      const svcName = parts[0] || value;
+      const svcPrice = Number(parts[1]) || 0;
+      setSelectedPrice(svcPrice);
+      setBooking({ service: svcName, price: svcPrice });
+      // keep the formData.service string for display
     }
     if (name === 'time') {
       setBooking({ time: value });
@@ -188,7 +205,7 @@ const BookingForm = () => {
                   value={formData.phone}
                   onChange={handleChange}
                   className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-pink-500 focus:outline-none transition-colors"
-                  placeholder="+1 (555) 000-0000"
+                  placeholder="07XXXXXXXX (Kenya)"
                 />
               </div>
 
@@ -206,11 +223,24 @@ const BookingForm = () => {
                   className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-pink-500 focus:outline-none transition-colors"
                 >
                   <option value="">Choose a service</option>
-                  {services.map((service) => (
-                    <option key={service.id} value={service.name}>
-                      {service.name} - KES {service.price}
-                    </option>
-                  ))}
+                  {services.map((service) => {
+                    if (service.variants && Array.isArray(service.variants)) {
+                      return (
+                        <optgroup key={service.id} label={service.name}>
+                          {service.variants.map((v: any) => (
+                            <option key={v.id} value={`${v.name}|${v.price}`}>
+                              {v.name} - KES {v.price}
+                            </option>
+                          ))}
+                        </optgroup>
+                      );
+                    }
+                    return (
+                      <option key={service.id} value={`${service.name}|${service.price}`}>
+                        {service.name} - KES {service.price}
+                      </option>
+                    );
+                  })}
                 </select>
               </div>
 
@@ -269,6 +299,7 @@ const BookingForm = () => {
                   <div className="text-right">
                     <p className="text-gray-600 text-sm">Total Price</p>
                     <p className="font-bold text-[#f5c542] text-3xl">KES {selectedPrice}</p>
+                    <p className="mt-1 text-sm text-gray-600">Deposit (50%): <span className="font-semibold">KES {Math.round(selectedPrice * 0.5)}</span></p>
                   </div>
                 </div>
               </div>

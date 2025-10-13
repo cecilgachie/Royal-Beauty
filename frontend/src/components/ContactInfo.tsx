@@ -31,15 +31,19 @@ const ContactInfo = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <motion.div className="flex items-start space-x-3" variants={item}>
               <MapPin className="w-5 h-5 text-[#f5c542] mt-1 flex-shrink-0" />
-              <p className="text-gray-700">123 Beauty Boulevard<br/>New York, NY 10001</p>
+              <p className="text-gray-700">Narok <br/>Narok, Kenya</p>
             </motion.div>
             <motion.div className="flex items-start space-x-3" variants={item}>
               <Phone className="w-5 h-5 text-[#f5c542] mt-1 flex-shrink-0" />
-              <p className="text-gray-700">+1 (555) 123-4567</p>
+              <p className="text-gray-700">+254 700316134</p>
             </motion.div>
             <motion.div className="flex items-start space-x-3" variants={item}>
               <Mail className="w-5 h-5 text-[#f5c542] mt-1 flex-shrink-0" />
-              <p className="text-gray-700">info@royalbeauty.com</p>
+              <p className="text-gray-700">eochieng717@gmail.com</p>
+            </motion.div>
+            <motion.div className="flex items-start space-x-3" variants={item}>
+              <MapPin className="w-5 h-5 text-[#f5c542] mt-1 flex-shrink-0" />
+              <p className="text-gray-700">Mon - sat: 8:00 AM - 9:00 PM<br/>Sun: 2:00 PM - 8:00 PM</p>
             </motion.div>
           </div>
         </motion.div>

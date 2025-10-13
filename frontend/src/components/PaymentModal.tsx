@@ -12,7 +12,9 @@ function formatKES(n: number | string | null | undefined) {
 const PaymentModal: React.FC<{ onClose: () => void }> = ({ onClose }) => {
   const { booking } = useBooking();
   const [phone, setPhone] = useState(booking.phone || '');
-  const [amount, setAmount] = useState(booking.price || 0);
+  // enforce 50% deposit when booking
+  const depositDefault = booking.price ? Math.round((Number(booking.price) || 0) * 0.5) : 0;
+  const amount: number = depositDefault;
   const [loading, setLoading] = useState(false);
   const [message, setMessage] = useState<string | null>(null);
 
@@ -178,7 +180,9 @@ const PaymentModal: React.FC<{ onClose: () => void }> = ({ onClose }) => {
           </div>
           <div>
             <label className="block text-sm text-gray-600">Amount (KES)</label>
-            <input type="number" value={amount} onChange={(e) => setAmount(Number(e.target.value))} className="w-full border rounded px-3 py-2" />
+            {/* amount is fixed to 50% deposit of selected service price */}
+            <input type="number" value={amount} readOnly className="w-full border rounded px-3 py-2 bg-gray-50" />
+            <p className="text-xs text-gray-500 mt-1">This amount is the 50% deposit required to hold your booking.</p>
           </div>
           <div className="flex items-center justify-end space-x-2">
             <button onClick={onClose} className="px-4 py-2 rounded bg-gray-100">Cancel</button>

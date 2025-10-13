@@ -1,5 +1,6 @@
 import ContactInfo from '../components/ContactInfo';
 import { motion } from 'framer-motion';
+import LazyImage from '../components/LazyImage';
 
 const welcomeVariants = {
   hidden: { opacity: 0, y: 8 },
@@ -19,6 +20,14 @@ const ContactPage = () => {
 
       {/* Contact details placed below welcome section */}
       <ContactInfo />
+
+      <section className="py-12 bg-white">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="rounded-lg overflow-hidden shadow-lg">
+            <LazyImage src={'/src/assets/salon_interior.jpg'} alt="RoyalBeauty Salon Interior" className="w-full h-80 object-cover" />
+          </div>
+        </div>
+      </section>
     </main>
   );
 };
