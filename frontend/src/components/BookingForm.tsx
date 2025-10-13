@@ -208,7 +208,7 @@ const BookingForm = () => {
                   <option value="">Choose a service</option>
                   {services.map((service) => (
                     <option key={service.id} value={service.name}>
-                      {service.name} - ${service.price}
+                      {service.name} - KES {service.price}
                     </option>
                   ))}
                 </select>
