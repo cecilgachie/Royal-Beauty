@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Calendar, Clock, User, Mail, Phone, Sparkles } from 'lucide-react';
 import toast from 'react-hot-toast';
 import SectionTitle from './SectionTitle';
@@ -38,7 +38,39 @@ const BookingForm = () => {
   });
 
   const [selectedPrice, setSelectedPrice] = useState(0);
-  const { setBooking, openSidebar } = useBooking();
+  const { booking, setBooking, openSidebar } = useBooking();
+
+  // Effect to auto-fill the service when redirected from Services page
+  useEffect(() => {
+    if (booking.service && booking.price) {
+      // Find the matching service in our services array
+      let foundService = '';
+      
+      // Check flat services
+      const flatService = services.find(s => !s.variants && s.name === booking.service);
+      if (flatService) {
+        foundService = `${flatService.name}|${flatService.price}`;
+      }
+      
+      // Check variant services
+      if (!foundService) {
+        for (const service of services) {
+          if (service.variants) {
+            const variant = service.variants.find((v: any) => v.name === booking.service);
+            if (variant) {
+              foundService = `${variant.name}|${variant.price}`;
+              break;
+            }
+          }
+        }
+      }
+      
+      if (foundService) {
+        setFormData(prev => ({ ...prev, service: foundService }));
+        setSelectedPrice(booking.price);
+      }
+    }
+  }, [booking]);
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>

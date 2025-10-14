@@ -6,48 +6,48 @@ import LazyImage from './LazyImage';
 const galleryImages = [
   {
     id: 1,
-    url: 'https://images.pexels.com/photos/3065209/pexels-photo-3065209.jpeg?auto=compress&cs=tinysrgb&w=800',
-    alt: 'Elegant hairstyle',
+    url: 'src/assets/hair001.jpg',
+    alt: 'Twist hairstyle',
   },
   {
     id: 2,
-    url: 'https://images.pexels.com/photos/3992860/pexels-photo-3992860.jpeg?auto=compress&cs=tinysrgb&w=800',
-    alt: 'Professional makeup',
+    url: 'src/assets/hair008.jpg',
+    alt: 'Professional Styles',
   },
   {
     id: 3,
-    url: 'https://images.pexels.com/photos/3065171/pexels-photo-3065171.jpeg?auto=compress&cs=tinysrgb&w=800',
+    url: 'src/assets/5.jpg',
     alt: 'Beautiful braids',
   },
   {
     id: 4,
-    url: 'https://images.pexels.com/photos/1319460/pexels-photo-1319460.jpeg?auto=compress&cs=tinysrgb&w=800',
-    alt: 'Nail art design',
+    url: 'src/assets/hair003.jpg',
+    alt: 'Lock Style',
   },
   {
     id: 5,
-    url: 'https://images.pexels.com/photos/3997379/pexels-photo-3997379.jpeg?auto=compress&cs=tinysrgb&w=800',
-    alt: 'Spa treatment',
+    url: 'src/assets/hair009.jpg',
+    alt: 'Cornrow',
   },
   {
     id: 6,
-    url: 'https://images.pexels.com/photos/3997993/pexels-photo-3997993.jpeg?auto=compress&cs=tinysrgb&w=800',
-    alt: 'Facial treatment',
+    url: 'src/assets/hair010.jpg',
+    alt: 'Cornrow Style',
   },
   {
     id: 7,
-    url: 'https://images.pexels.com/photos/3992859/pexels-photo-3992859.jpeg?auto=compress&cs=tinysrgb&w=800',
-    alt: 'Hair coloring',
+    url: 'src/assets/hair012.jpg',
+    alt: 'Men Style',
   },
   {
     id: 8,
-    url: 'https://images.pexels.com/photos/457701/pexels-photo-457701.jpeg?auto=compress&cs=tinysrgb&w=800',
-    alt: 'Makeup application',
+    url: 'src/assets/hair011.jpg',
+    alt: 'Hair colouring',
   },
   {
     id: 9,
-    url: 'https://images.pexels.com/photos/1813272/pexels-photo-1813272.jpeg?auto=compress&cs=tinysrgb&w=800',
-    alt: 'Nail care',
+    url: 'src/assets/piercing001.jpg',
+    alt: 'Ear piercing',
   },
 ];
 

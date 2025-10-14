@@ -11,7 +11,7 @@ const services = [
     description: 'Secure and stylish locks installation',
     price: 4000,
     icon: Scissors,
-    image: '/src/assets/locks.jpg',
+    image: '/src/assets/hair007.jpg',
   },
   {
     id: 2,
@@ -19,7 +19,7 @@ const services = [
     description: 'Knotless braids for a natural, lightweight finish',
     price: 700,
     icon: Scissors,
-    image: '/src/assets/knotless.jpg',
+    image: '/src/assets/hair004.jpg',
   },
   {
     id: 3,
@@ -27,7 +27,7 @@ const services = [
     description: 'Classic braiding styles',
     price: 600,
     icon: Scissors,
-    image: '/src/assets/braids.jpg',
+    image: '/src/assets/hair005.jpg',
   },
   {
     id: 4,
@@ -35,7 +35,7 @@ const services = [
     description: 'Traditional cornrows for a neat look',
     price: 400,
     icon: Scissors,
-    image: '/src/assets/cornrows.jpg',
+    image: '/src/assets/hair010.jpg',
   },
   {
     id: 5,
@@ -43,7 +43,7 @@ const services = [
     description: 'Stylish half cornrows / Fulani braid styling',
     price: 650,
     icon: Scissors,
-    image: '/src/assets/fulani.jpg',
+    image: '/src/assets/hair008.jpg',
   },
   {
     id: 6,
@@ -51,7 +51,7 @@ const services = [
     description: 'Delicate sister locks maintenance and installation',
     price: 2500,
     icon: Scissors,
-    image: '/src/assets/sisterlocks.jpg',
+    image: '/src/assets/hair003.jpg',
   },
   {
     id: 7,
@@ -59,7 +59,7 @@ const services = [
     description: 'Natural twist styling for a soft, elegant look',
     price: 700,
     icon: Scissors,
-    image: '/src/assets/naturaltwist.jpg',
+    image: '/src/assets/hair001.jpg',
   },
   {
     id: 8,
@@ -67,7 +67,7 @@ const services = [
     description: 'Trendy passion twists for volume and texture',
     price: 700,
     icon: Scissors,
-    image: '/src/assets/passiontwist.jpg',
+    image: '/src/assets/hair006.jpg',
   },
   {
     id: 9,
@@ -75,7 +75,7 @@ const services = [
     description: 'Defined twist-out styling',
     price: 350,
     icon: Scissors,
-    image: '/src/assets/twistout.jpg',
+    image: '/src/assets/hair011.jpg',
   },
   {
     id: 10,
@@ -83,7 +83,7 @@ const services = [
     description: 'Small, neat micro twists',
     price: 1000,
     icon: Scissors,
-    image: '/src/assets/microtwist.jpg',
+    image: '/src/assets/hair012.jpg',
   },
   {
     id: 11,
@@ -91,7 +91,7 @@ const services = [
     description: 'Safe and sterile ear piercing service',
     price: 250,
     icon: Scissors,
-    image: '/src/assets/earpiercing.jpg',
+    image: '/src/assets/piercing001.jpg',
   },
   {
     id: 12,
@@ -99,7 +99,7 @@ const services = [
     description: 'Precision stitching service',
     price: 500,
     icon: Scissors,
-    image: '/src/assets/stitches.jpg',
+    image: '/src/assets/hair009.jpg',
   },
 ];
 
@@ -149,7 +149,6 @@ const Services = () => {
                     <button
                       onClick={() => {
                         setBooking({ service: service.name, price: service.price });
-                        openSidebar();
                         navigate('/booking');
                       }}
                       className="bg-gradient-to-r from-pink-500 to-[#f5c542] text-white px-6 py-2 rounded-full hover:shadow-lg transform hover:-translate-y-0.5 transition-all font-medium"
