@@ -5,6 +5,8 @@ import { Menu, X, Sparkles } from 'lucide-react';
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  // TODO: Replace with real admin check (e.g., from context or auth)
+  const isAdmin = false;
 
   useEffect(() => {
     const handleScroll = () => {
@@ -40,36 +42,19 @@ const Navbar = () => {
           </div>
 
           <div className="hidden md:flex items-center space-x-8">
-            <button
-              onClick={() => scrollToSection('home')}
-              className="text-gray-700 hover:text-pink-500 transition-colors font-medium"
-            >
-              Home
-            </button>
-            <button
-              onClick={() => scrollToSection('services')}
-              className="text-gray-700 hover:text-pink-500 transition-colors font-medium"
-            >
-              Services
-            </button>
-            <button
-              onClick={() => scrollToSection('gallery')}
-              className="text-gray-700 hover:text-pink-500 transition-colors font-medium"
-            >
-              Gallery
-            </button>
-            <button
-              onClick={() => scrollToSection('booking')}
-              className="bg-gradient-to-r from-pink-500 to-[#f5c542] text-white px-6 py-2 rounded-full hover:shadow-lg transform hover:-translate-y-0.5 transition-all font-medium"
-            >
-              Book Now
-            </button>
-            <button
-              onClick={() => scrollToSection('contact')}
-              className="text-gray-700 hover:text-pink-500 transition-colors font-medium"
-            >
-              Contact
-            </button>
+            <button onClick={() => scrollToSection('home')} className="text-gray-700 hover:text-pink-500 transition-colors font-medium">Home</button>
+            <button onClick={() => scrollToSection('services')} className="text-gray-700 hover:text-pink-500 transition-colors font-medium">Services</button>
+            <button onClick={() => scrollToSection('gallery')} className="text-gray-700 hover:text-pink-500 transition-colors font-medium">Gallery</button>
+            <button onClick={() => scrollToSection('booking')} className="bg-gradient-to-r from-pink-500 to-[#f5c542] text-white px-6 py-2 rounded-full hover:shadow-lg transform hover:-translate-y-0.5 transition-all font-medium">Book Now</button>
+            <button onClick={() => scrollToSection('contact')} className="text-gray-700 hover:text-pink-500 transition-colors font-medium">Contact</button>
+            {isAdmin && (
+              <button
+                onClick={() => navigate('/admin')}
+                className="text-gray-700 hover:text-pink-500 transition-colors font-medium border-l pl-4 ml-4"
+              >
+                Admin
+              </button>
+            )}
           </div>
 
           <button
@@ -84,36 +69,19 @@ const Navbar = () => {
       {isOpen && (
         <div className="md:hidden bg-white border-t border-gray-100 shadow-lg">
           <div className="px-4 pt-2 pb-4 space-y-2">
-            <button
-              onClick={() => scrollToSection('home')}
-              className="block w-full text-left px-4 py-3 text-gray-700 hover:bg-pink-50 hover:text-pink-500 rounded-lg transition-colors font-medium"
-            >
-              Home
-            </button>
-            <button
-              onClick={() => scrollToSection('services')}
-              className="block w-full text-left px-4 py-3 text-gray-700 hover:bg-pink-50 hover:text-pink-500 rounded-lg transition-colors font-medium"
-            >
-              Services
-            </button>
-            <button
-              onClick={() => scrollToSection('gallery')}
-              className="block w-full text-left px-4 py-3 text-gray-700 hover:bg-pink-50 hover:text-pink-500 rounded-lg transition-colors font-medium"
-            >
-              Gallery
-            </button>
-            <button
-              onClick={() => scrollToSection('booking')}
-              className="block w-full text-left px-4 py-3 bg-gradient-to-r from-pink-500 to-[#f5c542] text-white rounded-lg hover:shadow-lg transition-all font-medium"
-            >
-              Book Now
-            </button>
-            <button
-              onClick={() => scrollToSection('contact')}
-              className="block w-full text-left px-4 py-3 text-gray-700 hover:bg-pink-50 hover:text-pink-500 rounded-lg transition-colors font-medium"
-            >
-              Contact
-            </button>
+            <button onClick={() => scrollToSection('home')} className="block w-full text-left px-4 py-3 text-gray-700 hover:bg-pink-50 hover:text-pink-500 rounded-lg transition-colors font-medium">Home</button>
+            <button onClick={() => scrollToSection('services')} className="block w-full text-left px-4 py-3 text-gray-700 hover:bg-pink-50 hover:text-pink-500 rounded-lg transition-colors font-medium">Services</button>
+            <button onClick={() => scrollToSection('gallery')} className="block w-full text-left px-4 py-3 text-gray-700 hover:bg-pink-50 hover:text-pink-500 rounded-lg transition-colors font-medium">Gallery</button>
+            <button onClick={() => scrollToSection('booking')} className="block w-full text-left px-4 py-3 bg-gradient-to-r from-pink-500 to-[#f5c542] text-white rounded-lg hover:shadow-lg transition-all font-medium">Book Now</button>
+            <button onClick={() => scrollToSection('contact')} className="block w-full text-left px-4 py-3 text-gray-700 hover:bg-pink-50 hover:text-pink-500 rounded-lg transition-colors font-medium">Contact</button>
+            {isAdmin && (
+              <button
+                onClick={() => { navigate('/admin'); setIsOpen(false); }}
+                className="block w-full text-left px-4 py-3 text-gray-700 hover:bg-pink-50 hover:text-pink-500 rounded-lg transition-colors font-medium border-t mt-2"
+              >
+                Admin
+              </button>
+            )}
           </div>
         </div>
       )}

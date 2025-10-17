@@ -10,6 +10,7 @@ import ServicesPage from './pages/ServicesPage';
 import GalleryPage from './pages/GalleryPage';
 import BookingPage from './pages/BookingPage';
 import ContactPage from './pages/ContactPage';
+import AdminPage from './pages/AdminPage';
 import Footer from './components/Footer';
 import { BookingProvider } from './context/BookingContext';
 import BookingSidebar from './components/BookingSidebar';
@@ -114,6 +115,14 @@ function AppRoutes() {
           element={
             <motion.div initial="initial" animate="in" exit="out" variants={pageVariants} transition={pageTransition}>
               <ContactPage />
+            </motion.div>
+          }
+        />
+        <Route
+          path="/admin"
+          element={
+            <motion.div initial="initial" animate="in" exit="out" variants={pageVariants} transition={pageTransition}>
+              <AdminPage />
             </motion.div>
           }
         />

@@ -6,47 +6,47 @@ import LazyImage from './LazyImage';
 const galleryImages = [
   {
     id: 1,
-    url: 'src/assets/hair001.jpg',
+  url: '/images/hair001.jpg',
     alt: 'Twist hairstyle',
   },
   {
     id: 2,
-    url: 'src/assets/hair008.jpg',
+  url: '/images/hair008.jpg',
     alt: 'Professional Styles',
   },
   {
     id: 3,
-    url: 'src/assets/5.jpg',
+  url: '/images/5.jpg',
     alt: 'Beautiful braids',
   },
   {
     id: 4,
-    url: 'src/assets/hair003.jpg',
+  url: '/images/hair003.jpg',
     alt: 'Lock Style',
   },
   {
     id: 5,
-    url: 'src/assets/hair009.jpg',
+  url: '/images/hair009.jpg',
     alt: 'Cornrow',
   },
   {
     id: 6,
-    url: 'src/assets/hair010.jpg',
+  url: '/images/hair010.jpg',
     alt: 'Cornrow Style',
   },
   {
     id: 7,
-    url: 'src/assets/hair012.jpg',
+  url: '/images/hair012.jpg',
     alt: 'Men Style',
   },
   {
     id: 8,
-    url: 'src/assets/hair011.jpg',
+  url: '/images/hair011.jpg',
     alt: 'Hair colouring',
   },
   {
     id: 9,
-    url: 'src/assets/piercing001.jpg',
+  url: '/images/piercing001.jpg',
     alt: 'Ear piercing',
   },
 ];
